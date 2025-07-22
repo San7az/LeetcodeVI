@@ -1,12 +1,8 @@
-function foo() {
-  var a = 1
-  let b = 2
-  {
-    var c = 4
-    let d = 5
-    console.log(a)
-    console.log(b)
-  }
-  console.log(b)
+var name = 'Kimi-Window'
+const obj = {
+  name: 'Kimi',
+  greet: function () {
+    console.log(this.name)
+  },
 }
-foo()
+obj.greet() // 输出: Kimi
