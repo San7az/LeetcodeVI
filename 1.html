@@ -8,22 +8,35 @@
     />
     <title>Document</title>
   </head>
-  <body>
-    <div class="div">123</div>
-    <div
-      id="op"
-      class="test"
-    >
-      123456
-    </div>
-  </body>
+  <body></body>
   <script>
-    let div1 = document.getElementById('op')
-    console.log(div1)
-  </script>
-  <style>
-    .test {
-      height: 200px;
+    class Rectangle {
+      constructor(height, width) {
+        this.height = height
+        this.width = width
+      }
+      Area() {
+        console.log('Executed')
+        return this.height * this.width
+      }
     }
-  </style>
+    class Son extends Rectangle {
+      constructor(height, width) {
+        super(height, width)
+      }
+      Area() {
+        return super.Area()
+      }
+      static count = 10
+
+      static length() {
+        console.log('触发静态方法 length')
+
+        return Son.count
+      }
+    }
+    let son = new Son(50, 10)
+    console.log(son.Area())
+    console.log(Son.length())
+  </script>
 </html>
